@@ -1,0 +1,9 @@
+# Зависимости TTS-пайплайна (ставить в глобальное окружение):
+#   uv venv --python 3.12 ~/.venvs/kyutai-tts
+#   uv pip install --python ~/.venvs/kyutai-tts/bin/python -r requirements.txt
+#
+# torch с PyPI по умолчанию — CUDA-сборка (~3 GB); CPU-only: --index-url https://download.pytorch.org/whl/cpu
+torch==2.9.1
+moshi==0.2.13        # инференс Kyutai TTS (тянет torch, sentencepiece, huggingface-hub, ...)
+epitran==1.35.3      # русский G2P (text → IPA), весь язык
+soundfile==0.14.0    # запись wav
