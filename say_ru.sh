@@ -26,7 +26,7 @@ PY="$TTS_VENV/bin/python"
 # HF-кэш моделей: глобальный (~/.cache/hf), можно переопределить HF_HOME
 export HF_HOME="${HF_HOME:-$HOME/.cache/hf}"
 
-TMP=$(mktemp -d /tmp/opencode/sayru.XXXXXX)
+TMP=$(mktemp -d /tmp/opencode/sayru.XXXXXX 2>/dev/null || mktemp -d)
 trap 'rm -rf "$TMP"' EXIT
 
 # 1. русский → французская транскрипция
